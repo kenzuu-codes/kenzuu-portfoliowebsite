@@ -1,11 +1,56 @@
 # Kenzuu Portfolio
 
-A modern, mobile‑first developer portfolio built with **Next.js 14 (App Router)**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**.  
-This README is written for BEGINNERS – lots of plain‑English explanations so you can understand what each part does.
+> *Where code meets creativity, and technology dances with art.*
+
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38bdf8?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat-square&logo=vercel)](https://vercel.com)
+[![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red?style=flat-square)](./LICENSE)
+
+**A multidisciplinary creative developer portfolio showcasing the fusion of programming, anime-inspired animations, and atmospheric music production.**
+
+🔗 **[View Live Site](https://kenzuu-portfoliowebsite.vercel.app)** | 📧 **[Contact Me](mailto:kenji.devcodes@gmail.com)**
 
 ---
 
-## 🌟 What This Project Gives You
+## ⚠️ Copyright Notice
+
+**© 2025 Kenzuu. All Rights Reserved.**
+
+This repository is a **personal portfolio project** and is **not open source**. 
+
+**What this means:**
+- ❌ **DO NOT** fork, copy, or clone this repository for your own use
+- ❌ **DO NOT** use this code as a template for your projects
+- ❌ **DO NOT** redistribute or publish any part of this codebase
+- ✅ **You MAY** view the code for educational/reference purposes only
+- ✅ **You MAY** link to the live website
+
+**Why?** This portfolio represents my unique personal brand, creative direction, and professional identity. While I'm happy to share my work publicly for inspiration and learning, I kindly ask that you respect the time and effort invested by not copying it directly.
+
+**Need a portfolio?** Consider building your own from scratch or using established open-source templates. If you'd like to discuss collaboration or have questions, feel free to [reach out](mailto:kenji.devcodes@gmail.com).
+
+See [LICENSE](./LICENSE) for full legal terms.
+
+---
+
+## 👋 About Me
+
+I'm **Kenzuu**, a creative developer and designer based in the Philippines who thrives at the intersection of **technology, art, and storytelling**. My work spans elegant code, immersive animations, and atmospheric soundscapes—all driven by a belief that the most compelling digital experiences emerge when technical precision meets creative expression.
+
+**What I Do:**
+- 🎨 Craft **interactive web experiences** with modern frameworks
+- ✨ Create **anime-inspired animations** and motion graphics
+- 🎵 Produce **electronic music** and soundscapes for multimedia projects
+- 🚀 Build **full-stack applications** that solve real problems
+
+**Core Philosophy:**  
+Technology should be a canvas for creativity. Every line of code is an opportunity to tell a story, every animation a chance to evoke emotion, and every project a step toward pushing the boundaries of what's possible in the digital realm.
+
+---
+
+## 🎯 Project Features
 
 | Feature | What it means |
 |---------|--------------------------------------|
@@ -25,37 +70,73 @@ This README is written for BEGINNERS – lots of plain‑English explanations so
 
 ---
 
-## 🧰 Tech Stack (What & Why)
+## 🛠 Tech Stack
 
-| Tool | Why it’s here |
-|------|---------------|
-| Next.js 14 (App Router) | Modern React framework: routing + SSR/SSG + performance out of the box |
-| TypeScript | Catches mistakes early (types = guard rails) |
-| Tailwind CSS | Utility classes = fast styling without writing tons of CSS files |
-| Framer Motion | Smooth, easy animations for React components |
-| next-themes | Dark/light theme control (adds `class="dark"`) |
-| Zod | Validates form data (ensures the user sends what you expect) |
-| Jest + React Testing Library | Lets you test components / logic |
-| Vercel | Super easy hosting for Next.js |
+Built with modern tools that prioritize performance, developer experience, and creativity:
+
+**Frontend**
+- **Next.js 14** (App Router) — React framework with SSR/SSG and automatic code splitting
+- **TypeScript** — Type safety and enhanced developer experience
+- **Tailwind CSS** — Utility-first styling for rapid UI development
+- **Framer Motion** — Fluid animations with spring physics
+
+**Features & Integrations**
+- **next-themes** — Seamless dark/light mode with system preference detection
+- **Zod** — Runtime validation for contact forms and API routes
+- **react-icons** — Official brand icons for tech stack and social links
+- **Lucide React** — Beautiful, consistent UI icons
+
+**Developer Tools**
+- **Jest + React Testing Library** — Component testing with confidence
+- **ESLint + Prettier** — Code quality and consistent formatting
+- **Husky** — Git hooks for pre-commit checks
+- **GitHub Actions** — Automated CI/CD pipeline
+
+**Deployment**
+- **Vercel** — Zero-config deployment with automatic preview URLs
 
 ---
 
-## 🚀 Quick Start (Local)
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ and npm installed
+- Git for version control
+
+### Local Development
 
 ```bash
-# 1. Clone (or download ZIP)
-git clone https://github.com/kenzuu-codes/kenzuu-portfolio.git
-cd kenzuu-portfolio
+# Clone the repository
+git clone https://github.com/kenzuu-codes/kenzuu-portfoliowebsite.git
+cd kenzuu-portfoliowebsite
 
-# 2. Install dependencies
+# Install dependencies
 npm install
 
-# 3. Run development server
+# Run development server
 npm run dev
-# Open: http://localhost:3000
 ```
 
-If you see the home page without build errors – you’re good.
+Open [http://localhost:3000](http://localhost:3000) in your browser. The site will hot-reload as you edit files.
+
+### Build for Production
+
+```bash
+# Create optimized production build
+npm run build
+
+# Run production server locally
+npm run start
+```
+
+### Other Commands
+
+```bash
+npm run lint        # Check code quality with ESLint
+npm run type-check  # Run TypeScript compiler without building
+npm run test        # Run Jest tests
+npm run format      # Format code with Prettier
+```
 
 ---
 
@@ -79,20 +160,60 @@ You mostly edit: `lib/` (data), `components/` (UI), and `app/` (pages).
 
 ---
 
-## 🧩 Personalize Your Identity (5–10 min)
+## 🎨 Customization Guide
 
-Edit this file:
+Want to use this portfolio as your own template? Here's how to personalize it:
 
-```ts
-# src/config/site.ts
-name        -> Your public name or brand
-description -> Short pitch (1–2 sentences)
-socials     -> GitHub, LinkedIn, etc.
-email       -> Where contact form might send later
-keywords    -> Relevant tech terms
+### 1. Update Personal Information
+
+Edit `src/lib/personal-info.ts`:
+```typescript
+export const personalInfo = {
+  name: "Your Name",
+  title: "Your Professional Title",
+  heroDescription: "Your unique value proposition",
+  email: "your.email@example.com",
+  location: "Your Location",
+  social: {
+    github: "https://github.com/yourusername",
+    twitter: "https://twitter.com/yourusername",
+    instagram: "https://instagram.com/yourusername",
+    // Add or remove platforms as needed
+  }
+}
 ```
 
-Also update `src/lib/personal-info.ts` if it exists (the resume-style info file).
+### 2. Add Your Projects
+
+Edit `src/lib/projects.ts`:
+```typescript
+{
+  slug: "project-name",              // URL: /work/project-name
+  title: "Project Title",
+  description: "What problem does this solve?",
+  tags: ["Next.js", "TypeScript"],
+  coverImage: "/projects/cover.jpg", // Place in public/projects/
+  repoUrl: "https://github.com/you/project",
+  liveUrl: "https://project.vercel.app"
+}
+```
+
+**Tips:**
+- Focus on 3-6 high-quality projects
+- Use consistent image sizes (800×450px recommended)
+- Optimize images with [TinyPNG](https://tinypng.com)
+- Write descriptions that highlight impact, not just features
+
+### 3. Customize Theme Colors
+
+Edit `tailwind.config.ts` under `theme.extend.colors`:
+```typescript
+brand: {
+  500: '#3b82f6',  // Primary brand color
+  600: '#2563eb',  // Hover states
+  // ... other shades
+}
+```
 
 ---
 
@@ -157,46 +278,42 @@ To change colors: edit `tailwind.config.ts` under `theme.extend.colors.brand`.
 
 ---
 
-## ✉ Contact Form (How It Works)
+## 📬 Contact Form Implementation
 
-- Form is on `/contact`
-- Validated with **Zod** (checks name/email/message lengths & format)
-- Honeypot field (hidden) catches dumb bots
-- Simple rate limiting in memory (5 requests / 10 minutes per IP)
-- Currently logs message on server – you can later connect **SendGrid**, **Resend**, etc.
+The contact form (`/contact`) includes production-ready features:
 
-Troubleshooting:
-- Getting 422? → Invalid input (check lengths / email)
-- Getting 429? → You hit the rate limit
+- ✅ **Zod Validation** — Type-safe runtime validation for all fields
+- 🛡️ **Honeypot Protection** — Hidden field catches spam bots
+- ⏱️ **Rate Limiting** — 5 requests per 10 minutes per IP
+- 🔒 **XSS Protection** — Input sanitization for security
+
+**Current Setup:** Messages are logged to the server console  
+**Future Enhancement:** Integrate email services like SendGrid, Resend, or Nodemailer
+
+### Troubleshooting
+- **422 Error** → Invalid input (check email format and field lengths)
+- **429 Error** → Rate limit exceeded (wait 10 minutes)
 
 ---
 
-## 🧪 Scripts (You Will Use These)
+## ⚙️ Environment Variables
+
+Create `.env.local` in the root directory (automatically ignored by Git):
 
 ```bash
-npm run dev         # Start dev server
-npm run build       # Create production build
-npm run start       # Run production build locally
-npm run lint        # Check code style / potential issues
-npm run test        # Run tests (if configured)
-npm run type-check  # Run TypeScript without building
-```
-
----
-
-## ⚙ Environment Variables
-
-Create a file: `.env.local` (this is ignored by Git)
-
-```
+# Site Configuration
 NEXT_PUBLIC_SITE_URL=https://yourdomain.com
-CONTACT_EMAIL=you@example.com
-# Optional future:
-# GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
-# SENDGRID_API_KEY=...
+CONTACT_EMAIL=your.email@example.com
+
+# Optional: Analytics & Monitoring
+# NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+
+# Optional: Email Service (for contact form)
+# SENDGRID_API_KEY=your_api_key_here
+# RESEND_API_KEY=your_api_key_here
 ```
 
-Restart the dev server after editing.
+**Note:** Restart the development server after modifying environment variables.
 
 ---
 
@@ -345,17 +462,148 @@ Example:
 
 ---
 
-## 📜 License
+## 🎯 Performance & Best Practices
 
-MIT © Kenzuu (You can modify or make private if you prefer)
+This portfolio follows Next.js best practices for optimal performance:
+
+- ✅ **Image Optimization** — Automatic WebP/AVIF conversion and lazy loading
+- ✅ **Code Splitting** — Dynamic imports reduce initial bundle size
+- ✅ **Font Optimization** — Self-hosted fonts with `display: swap`
+- ✅ **Static Generation** — Pre-rendered pages for instant loads
+- ✅ **Reduced Motion** — Respects user's OS motion preferences
+
+### Run Performance Audit
+
+```bash
+npm run build
+npm run start
+# Open Chrome Lighthouse and audit localhost:3000
+```
 
 ---
 
-## 🙋 Need Help Later?
+## ♿ Accessibility Features
 
-Open an issue or ask for:
-- “Explain component X”
-- “Add OG image route”
-- “Add security headers middleware”
+Built with accessibility in mind:
 
-Happy building – and remember: **Launch first, perfect later.** 🚀
+- ⌨️ **Keyboard Navigation** — Full TAB support for all interactive elements
+- 🎯 **Skip Link** — Jump directly to main content (appears on first TAB)
+- 👁️ **Focus Indicators** — Clear visual focus states
+- 🌗 **High Contrast** — WCAG AA compliant color ratios
+- 🎬 **Reduced Motion** — Honors `prefers-reduced-motion` setting
+- 📱 **Screen Reader Friendly** — Semantic HTML with ARIA labels
+
+**Test with:** Chrome Lighthouse (Accessibility tab), axe DevTools, or keyboard-only navigation.
+
+---
+
+## 🚀 Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Import repository on [Vercel](https://vercel.com)
+3. Vercel auto-detects Next.js and configures everything
+4. Done! Auto-deploys on every push to `main`
+
+### Other Platforms
+
+```bash
+npm run build
+# Deploy the .next folder and public assets
+# Compatible with: Netlify, Railway, DigitalOcean, etc.
+```
+
+---
+
+## 🗺️ Roadmap
+
+**Upcoming Features:**
+- [ ] Blog section with MDX for technical articles
+- [ ] Enhanced animation showcase with live code previews
+- [ ] Music player with streaming integration
+- [ ] Detailed project case studies
+- [ ] Newsletter subscription
+- [ ] Analytics dashboard
+- [ ] Multi-language support (EN/JP)
+
+**Future Ideas:**
+- Interactive 3D elements (Three.js/React Three Fiber)
+- CMS integration for content management
+- Real-time collaboration features
+- Design tool integrations (Figma API)
+
+---
+
+## 🐛 Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| Images not loading | Ensure path starts with `/` and file is in `public/` |
+| Styles not updating | Restart dev server or hard refresh (Ctrl+Shift+R) |
+| Dark mode flashing | Check `suppressHydrationWarning` on `<html>` tag |
+| Contact form 422 | Validation failed—verify email format & field lengths |
+| Rate limit (429) | Wait 10 minutes or restart dev server |
+| Build errors | Run `npm install` and check TypeScript errors with `npm run type-check` |
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+**Feel free to fork, modify, and use this as your own!** If you create something awesome with it, I'd love to see what you built—drop me a link!
+
+---
+
+## 🤝 Let's Connect
+
+I'm always interested in new collaborations, creative projects, and meaningful conversations.
+
+**Find me online:**
+- 💼 **GitHub:** [@kenzuu-codes](https://github.com/kenzuu-codes)
+- 🐦 **Twitter:** [@kenzuuGenga](https://twitter.com/kenzuuGenga)
+- 📸 **Instagram:** [@kenzuuarts](https://instagram.com/kenzuuarts)
+- 📧 **Email:** [kenji.devcodes@gmail.com](mailto:kenji.devcodes@gmail.com)
+
+**Open to:**
+- Open source collaborations
+- Freelance web development
+- Creative coding projects
+- Animation & motion design work
+- Music production collaborations
+
+---
+
+## 🙏 Acknowledgments
+
+This portfolio was built with inspiration from the developer community and powered by incredible open-source tools:
+
+- [Next.js](https://nextjs.org) — The React framework for production
+- [Vercel](https://vercel.com) — Seamless deployment and hosting
+- [Tailwind CSS](https://tailwindcss.com) — Utility-first CSS framework
+- [Framer Motion](https://www.framer.com/motion/) — Production-ready animations
+
+**Special thanks** to all open-source contributors whose work made this portfolio possible.
+
+---
+
+## 📄 License & Copyright
+
+**© 2025 Kenzuu. All Rights Reserved.**
+
+This project is proprietary and confidential. Unauthorized copying, modification, distribution, or use of this code is strictly prohibited. See [LICENSE](./LICENSE) for full terms.
+
+**For collaboration inquiries or licensing questions:** [kenji.devcodes@gmail.com](mailto:kenji.devcodes@gmail.com)
+
+---
+
+<div align="center">
+
+**Built with 💙 by Kenzuu**
+
+*Where code meets creativity, and technology dances with art*
+
+[![GitHub](https://img.shields.io/github/stars/kenzuu-codes/kenzuu-portfoliowebsite?style=social)](https://github.com/kenzuu-codes/kenzuu-portfoliowebsite)
+
+</div>
