@@ -1,7 +1,4 @@
 {
-  "buildCommand": "cd kenzuu-portfolio && npm run build",
-  "installCommand": "cd kenzuu-portfolio && npm install",
-  "outputDirectory": "kenzuu-portfolio/.next",
   "redirects": [
     {
       "source": "/portfolio",
