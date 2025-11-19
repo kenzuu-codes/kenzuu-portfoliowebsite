@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import * as Icons from 'lucide-react'
-import Link from 'next/link'
 import SectionHeading from '@/components/SectionHeading'
 import { SocialLinks } from '@/components/SocialLinks'
 import { TechIcon } from '@/components/TechIcon'
@@ -11,7 +10,7 @@ import { aboutContent, techStack, personalInfo } from '@/lib/personal-info'
 
 // Helper for timeline Lucide icons
 const getIcon = (iconName: string) => {
-  const IconComponent = (Icons as any)[iconName]
+  const IconComponent = (Icons as Record<string, React.ComponentType>)[iconName]
   return IconComponent || Icons.Circle
 }
 
@@ -64,7 +63,7 @@ export default function AboutPage() {
             Journey
           </motion.h2>
           <div className="space-y-8">
-            {aboutContent.timeline.map((item, index) => {
+            {aboutContent.timeline.map((item) => {
               const IconComponent = getIcon(item.icon)
               return (
                 <motion.div
