@@ -97,109 +97,132 @@ Built with modern tools that prioritize performance, developer experience, and c
 
 ---
 
-## 🚀 Getting Started
+## 📁 Project Architecture
 
-### Prerequisites
-- Node.js 18+ and npm installed
-- Git for version control
-
-### Local Development
-
-```bash
-# Clone the repository
-git clone https://github.com/kenzuu-codes/kenzuu-portfoliowebsite.git
-cd kenzuu-portfoliowebsite
-
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser. The site will hot-reload as you edit files.
-
-### Build for Production
-
-```bash
-# Create optimized production build
-npm run build
-
-# Run production server locally
-npm run start
-```
-
-### Other Commands
-
-```bash
-npm run lint        # Check code quality with ESLint
-npm run type-check  # Run TypeScript compiler without building
-npm run test        # Run Jest tests
-npm run format      # Format code with Prettier
-```
-
----
-
-## 📁 Folder Structure (Simplified View)
+This portfolio is built with a clean, scalable architecture:
 
 ```
 src/
-  app/               # Routes (each folder = URL path)
-  components/        # Reusable UI + layout pieces
-  hooks/             # Custom React hooks (logic helpers)
-  lib/               # Data (projects, animations, tracks) + utilities
-  styles/            # Global CSS (Tailwind base + variables)
-  config/            # Centralized config (site name, metadata)
+  app/               # Next.js App Router pages
+  components/        # Reusable React components
+  hooks/             # Custom React hooks
+  lib/               # Data models and utilities
 public/
-  projects/          # Project images
-  animations/        # GIFs / previews
-  music/             # Audio files (if any)
+  projects/          # Project images and assets
+  animations/        # Animation previews
+  music/             # Audio files
 ```
-
-You mostly edit: `lib/` (data), `components/` (UI), and `app/` (pages).
 
 ---
 
-## 🎨 Customization Guide
+## 🎯 Performance & Best Practices
 
-Want to use this portfolio as your own template? Here's how to personalize it:
+This portfolio follows Next.js best practices for optimal performance:
 
-### 1. Update Personal Information
+- ✅ **Image Optimization** — Automatic WebP/AVIF conversion and lazy loading
+- ✅ **Code Splitting** — Dynamic imports reduce initial bundle size
+- ✅ **Font Optimization** — Self-hosted fonts with `display: swap`
+- ✅ **Static Generation** — Pre-rendered pages for instant loads
+- ✅ **Reduced Motion** — Respects user's OS motion preferences
 
-Edit `src/lib/personal-info.ts`:
-```typescript
-export const personalInfo = {
-  name: "Your Name",
-  title: "Your Professional Title",
-  heroDescription: "Your unique value proposition",
-  email: "your.email@example.com",
-  location: "Your Location",
-  social: {
-    github: "https://github.com/yourusername",
-    twitter: "https://twitter.com/yourusername",
-    instagram: "https://instagram.com/yourusername",
-    // Add or remove platforms as needed
-  }
-}
-```
+---
 
-### 2. Add Your Projects
+## ♿ Accessibility Features
 
-Edit `src/lib/projects.ts`:
-```typescript
-{
-  slug: "project-name",              // URL: /work/project-name
-  title: "Project Title",
-  description: "What problem does this solve?",
-  tags: ["Next.js", "TypeScript"],
-  coverImage: "/projects/cover.jpg", // Place in public/projects/
-  repoUrl: "https://github.com/you/project",
-  liveUrl: "https://project.vercel.app"
-}
-```
+Built with accessibility in mind:
 
-**Tips:**
-- Focus on 3-6 high-quality projects
+- ⌨️ **Keyboard Navigation** — Full TAB support for all interactive elements
+- 🎯 **Skip Link** — Jump directly to main content (appears on first TAB)
+- 👁️ **Focus Indicators** — Clear visual focus states
+- 🌗 **High Contrast** — WCAG AA compliant color ratios
+- 🎬 **Reduced Motion** — Honors `prefers-reduced-motion` setting
+- 📱 **Screen Reader Friendly** — Semantic HTML with ARIA labels
+
+---
+
+## 🗺️ Roadmap
+
+**Upcoming Features:**
+- [ ] Blog section with MDX for technical articles
+- [ ] Enhanced animation showcase with live code previews
+- [ ] Music player with streaming integration
+- [ ] Detailed project case studies
+- [ ] Newsletter subscription
+- [ ] Analytics dashboard
+- [ ] Multi-language support (EN/JP)
+
+**Future Ideas:**
+- Interactive 3D elements (Three.js/React Three Fiber)
+- CMS integration for content management
+- Real-time collaboration features
+- Design tool integrations (Figma API)
+
+---
+
+## 🐛 Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| Images not loading | Ensure path starts with `/` and file is in `public/` |
+| Styles not updating | Restart dev server or hard refresh (Ctrl+Shift+R) |
+| Dark mode flashing | Check `suppressHydrationWarning` on `<html>` tag |
+| Contact form 422 | Validation failed—verify email format & field lengths |
+| Rate limit (429) | Wait 10 minutes or restart dev server |
+| Build errors | Run `npm install` and check TypeScript errors with `npm run type-check` |
+
+---
+
+## 🤝 Let's Connect
+
+I'm always interested in new collaborations, creative projects, and meaningful conversations.
+
+**Find me online:**
+- 💼 **GitHub:** [@kenzuu-codes](https://github.com/kenzuu-codes)
+- 🐦 **Twitter:** [@kenzuuGenga](https://twitter.com/kenzuuGenga)
+- 📸 **Instagram:** [@kenzuuarts](https://instagram.com/kenzuuarts)
+- 📧 **Email:** [kenji.devcodes@gmail.com](mailto:kenji.devcodes@gmail.com)
+
+**Open to:**
+- Open source collaborations
+- Freelance web development
+- Creative coding projects
+- Animation & motion design work
+- Music production collaborations
+
+---
+
+## 🙏 Acknowledgments
+
+This portfolio was built with inspiration from the developer community and powered by incredible open-source tools:
+
+- [Next.js](https://nextjs.org) — The React framework for production
+- [Vercel](https://vercel.com) — Seamless deployment and hosting
+- [Tailwind CSS](https://tailwindcss.com) — Utility-first CSS framework
+- [Framer Motion](https://www.framer.com/motion/) — Production-ready animations
+
+**Special thanks** to all open-source contributors whose work made this portfolio possible.
+
+---
+
+## 📄 License & Copyright
+
+**© 2025 Kenzuu. All Rights Reserved.**
+
+This project is proprietary and confidential. Unauthorized copying, modification, distribution, or use of this code is strictly prohibited. See [LICENSE](./LICENSE) for full terms.
+
+**For collaboration inquiries or licensing questions:** [kenji.devcodes@gmail.com](mailto:kenji.devcodes@gmail.com)
+
+---
+
+<div align="center">
+
+**Built with 💙 by Kenzuu**
+
+*Where code meets creativity, and technology dances with art*
+
+[![GitHub](https://img.shields.io/github/stars/kenzuu-codes/kenzuu-portfoliowebsite?style=social)](https://github.com/kenzuu-codes/kenzuu-portfoliowebsite)
+
+</div>
 - Use consistent image sizes (800×450px recommended)
 - Optimize images with [TinyPNG](https://tinypng.com)
 - Write descriptions that highlight impact, not just features
@@ -278,45 +301,6 @@ To change colors: edit `tailwind.config.ts` under `theme.extend.colors.brand`.
 
 ---
 
-## 📬 Contact Form Implementation
-
-The contact form (`/contact`) includes production-ready features:
-
-- ✅ **Zod Validation** — Type-safe runtime validation for all fields
-- 🛡️ **Honeypot Protection** — Hidden field catches spam bots
-- ⏱️ **Rate Limiting** — 5 requests per 10 minutes per IP
-- 🔒 **XSS Protection** — Input sanitization for security
-
-**Current Setup:** Messages are logged to the server console  
-**Future Enhancement:** Integrate email services like SendGrid, Resend, or Nodemailer
-
-### Troubleshooting
-- **422 Error** → Invalid input (check email format and field lengths)
-- **429 Error** → Rate limit exceeded (wait 10 minutes)
-
----
-
-## ⚙️ Environment Variables
-
-Create `.env.local` in the root directory (automatically ignored by Git):
-
-```bash
-# Site Configuration
-NEXT_PUBLIC_SITE_URL=https://yourdomain.com
-CONTACT_EMAIL=your.email@example.com
-
-# Optional: Analytics & Monitoring
-# NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-
-# Optional: Email Service (for contact form)
-# SENDGRID_API_KEY=your_api_key_here
-# RESEND_API_KEY=your_api_key_here
-```
-
-**Note:** Restart the development server after modifying environment variables.
-
----
-
 ## 🛫 Deploy (Vercel = Easiest)
 
 1. Commit & push your code to GitHub:
@@ -362,25 +346,6 @@ Use Chrome Lighthouse “Accessibility” or axe extension for automated hints.
 
 ---
 
-## ⚡ Performance Tips (Tackle When Ready)
-
-| Task | Benefit |
-|------|---------|
-| Use `next/image` for all non-icon images | Automatic lazy loading & resizing |
-| Dynamic `import()` large optional components | Smaller first load |
-| Compress images | Faster loading on mobile |
-| Remove unused animation code | Reduces bundle size |
-| Keep dependencies minimal | Less JS shipped |
-
-Run:
-```bash
-npm run build
-npm run start
-# Then open Lighthouse and test production build
-```
-
----
-
 ## 🧪 Testing (Basic Idea)
 
 If included:
@@ -393,37 +358,6 @@ npm run test
 ```
 
 If you’re new: focus on shipping the site; tests can come later.
-
----
-
-## 🧹 Maintenance (Do Monthly)
-
-| Task | Why |
-|------|-----|
-| Add any new project | Keeps portfolio fresh |
-| Update outdated images | Shows recency |
-| Upgrade dependencies | Security + performance |
-| Re‑run Lighthouse | Catch regressions |
-| Click every link | Avoid broken navigation |
-| Scan for typos | Professional polish |
-
----
-
-## 🧾 Launch Checklist (Minimum)
-
-| Item | Done? |
-|------|-------|
-| 3–6 real projects (with images) | ☐ |
-| About section written (no placeholder text) | ☐ |
-| Contact form works in production | ☐ |
-| Mobile nav works | ☐ |
-| Theme toggle persists | ☐ |
-| Metadata & favicon updated | ☐ |
-| Sitemap & robots accessible | ☐ |
-| No console errors | ☐ |
-| Lighthouse A11y ≥ 90 | ☐ |
-
-Ship when all above are ✅ – polish can come later.
 
 ---
 
@@ -545,14 +479,6 @@ npm run build
 | Contact form 422 | Validation failed—verify email format & field lengths |
 | Rate limit (429) | Wait 10 minutes or restart dev server |
 | Build errors | Run `npm install` and check TypeScript errors with `npm run type-check` |
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-**Feel free to fork, modify, and use this as your own!** If you create something awesome with it, I'd love to see what you built—drop me a link!
 
 ---
 
