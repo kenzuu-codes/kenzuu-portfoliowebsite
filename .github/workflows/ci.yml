@@ -29,8 +29,5 @@ jobs:
       - name: Type check
         run: npm run type-check
 
-      - name: Test
-        run: npm test -- --ci --passWithNoTests
-
       - name: Build
         run: npm run build

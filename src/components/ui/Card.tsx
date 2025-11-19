@@ -73,6 +73,7 @@ const Card = forwardRef<ComponentRef<ElementType>, CardProps>(
 
     return (
       <Component
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ref={ref as React.Ref<any>}
         className={combinedClasses}
         {...interactiveProps}
