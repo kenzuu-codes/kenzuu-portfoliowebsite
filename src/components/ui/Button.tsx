@@ -18,8 +18,8 @@ function createVariants<T extends Record<string, string>>(config: {
     // Apply variant classes
     Object.entries(config.variants).forEach(([variantKey, variantValues]) => {
       const value =
-        (variantProps as any)[variantKey] ??
-        (config.defaultVariants as any)?.[variantKey]
+        (variantProps as Record<string, string>)[variantKey] ??
+        (config.defaultVariants as Record<string, string>)?.[variantKey]
       if (value && variantValues[value]) {
         classes += ` ${variantValues[value]}`
       }

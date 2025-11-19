@@ -12,7 +12,7 @@ interface SocialLinksProps {
 export function SocialLinks({ variant = 'default', className = '' }: SocialLinksProps) {
   // Get all non-empty social links from personalInfo
   const socialLinks = Object.entries(personalInfo.social)
-    .filter(([_, url]) => url && url.trim() !== '')
+    .filter(([, url]) => url && url.trim() !== '')
     .map(([platform, url]) => ({
       platform,
       url: url!,

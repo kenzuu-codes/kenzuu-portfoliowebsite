@@ -19,7 +19,7 @@ type CardProps<T extends ElementType = 'div'> = {
   }
 >
 
-const Card = forwardRef<any, CardProps>(
+const Card = forwardRef<HTMLElement, CardProps>(
   (
     {
       as: Component = 'div',

@@ -230,7 +230,7 @@ export default function ContactPage() {
             {submitStatus === 'success' && (
               <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
                 <p className="text-green-800 dark:text-green-200 text-sm">
-                  Thank you! Your message has been sent successfully. I'll get
+                  Thank you! Your message has been sent successfully. I&apos;ll get
                   back to you soon.
                 </p>
               </div>

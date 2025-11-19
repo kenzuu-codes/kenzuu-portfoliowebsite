@@ -57,7 +57,7 @@ export function AudioPlayer({ tracks }: AudioPlayerProps) {
     }
   }
 
-  const handlePlay = async () => {
+  const handlePlay = useCallback(async () => {
     if (audioRef.current) {
       try {
         await audioRef.current.play()
@@ -66,22 +66,22 @@ export function AudioPlayer({ tracks }: AudioPlayerProps) {
         console.error('Error playing audio:', error)
       }
     }
-  }
+  }, [])
 
-  const handlePause = () => {
+  const handlePause = useCallback(() => {
     if (audioRef.current) {
       audioRef.current.pause()
       setIsPlaying(false)
     }
-  }
+  }, [])
 
-  const handlePlayPause = () => {
+  const handlePlayPause = useCallback(() => {
     if (isPlaying) {
       handlePause()
     } else {
       handlePlay()
     }
-  }
+  }, [isPlaying, handlePause, handlePlay])
 
   const handleNext = () => {
     const nextIndex =
