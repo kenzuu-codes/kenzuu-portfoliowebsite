@@ -33,4 +33,4 @@ jobs:
         run: npm test -- --ci --passWithNoTests
 
       - name: Build
-        run: pnpm build
+        run: npm run build
