@@ -220,6 +220,17 @@ export function Navbar() {
         </div>
       </div>
 
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={closeMenu}
+          className="md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-30"
+          aria-hidden="true"
+        />
+      )}
+
       {/* Mobile Navigation */}
       <motion.div
         ref={mobileMenuRef}
@@ -227,12 +238,7 @@ export function Navbar() {
         variants={shouldReduceMotion ? undefined : mobileMenuVariants}
         initial="closed"
         animate={isOpen ? 'open' : 'closed'}
-        className={`md:hidden fixed inset-y-0 right-0 w-64 bg-white dark:bg-neutral-950 border-l border-neutral-200 dark:border-neutral-800 shadow-xl z-40 ${
-          !isOpen ? 'invisible pointer-events-none transform translate-x-full' : 'visible pointer-events-auto transform translate-x-0'
-        }`}
-        style={{
-          display: isOpen ? 'block' : 'none'
-        }}
+        className="md:hidden fixed inset-y-0 right-0 w-64 bg-white dark:bg-neutral-950 border-l border-neutral-200 dark:border-neutral-800 shadow-xl z-50"
       >
         <div className="flex flex-col h-full pt-20 pb-6 px-6">
           <nav className="flex-1 space-y-4">
@@ -260,18 +266,7 @@ export function Navbar() {
             })}
           </nav>
         </div>
-        </motion.div>
-
-      {/* Mobile menu overlay */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={closeMenu}
-          className="md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
-        />
-      )}
+      </motion.div>
     </nav>
   )
 }
