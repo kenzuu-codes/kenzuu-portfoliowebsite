@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
-import { inter, jetbrainsMono } from './fonts'
+import { inter, jetbrainsMono, orbitron } from './fonts'
 import { personalInfo } from '@/lib/personal-info'
 import './globals.css'
 
@@ -115,7 +115,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${orbitron.variable}`}
     >
       <head>
         <script

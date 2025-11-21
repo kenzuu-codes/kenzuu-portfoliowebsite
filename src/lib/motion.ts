@@ -1,10 +1,23 @@
+/**
+ * Motion utilities for Framer Motion animations
+ * Includes accessibility support for reduced motion preferences
+ */
+
 import { type Variants } from 'framer-motion'
 
+/**
+ * Check if user prefers reduced motion
+ * Returns false during SSR for safe hydration
+ */
 export function prefersReducedMotion(): boolean {
   if (typeof window === 'undefined') return false
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches
 }
 
+/**
+ * Create motion variants that respect user's reduced motion preference
+ * Removes transform/scale animations but keeps opacity transitions
+ */
 const createVariants = (variants: Variants): Variants => {
   if (prefersReducedMotion()) {
     const reduced: Variants = {}

@@ -34,6 +34,32 @@
   --transition-fast: 150ms ease;
   --transition-normal: 300ms ease;
   --transition-slow: 500ms ease;
+
+  /* Updated Hero Palette - Professional Blue Accent */
+  --color-bg: #050608;
+  --color-surface: #0B0E12;
+  --color-accent-blue: #3768EF;
+  --color-accent-blue-hover: #4B7BFF;
+  --color-accent-blue-active: #2C57C8;
+  --color-accent-green-soft: #8DFB3B; /* Retained for micro-accents only */
+  --color-text-primary: #ECEEF1;
+  --color-text-muted: #7A838C;
+  --color-border: #1E2429;
+  --color-warning: #FFC107;
+
+  /* Hero System Variables - Alignment & Layout */
+  --header-height: 64px;
+  --layout-horizontal-padding: clamp(1rem, 4vw, 4rem);
+  --hero-bg-dark: #0f172a;
+  --hero-bg-light: #ffffff;
+  --hero-text-primary-dark: #f8fafc;
+  --hero-text-primary-light: #0f172a;
+  --hero-text-muted-dark: #94a3b8;
+  --hero-text-muted-light: #64748b;
+  --hero-accent-blue: #3768EF;
+  --hero-accent-blue-hover: #4B7BFF;
+  --hero-accent-blue-active: #2C57C8;
+  --hero-banner-warning: #FFC107;
 }
 
 .dark {
@@ -56,6 +82,87 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3),
     0 4px 6px -4px rgb(0 0 0 / 0.3);
+}
+
+/* Light mode hero overrides */
+@media (prefers-color-scheme: light) {
+  :root:not(.dark) {
+    --color-bg: var(--hero-bg-light);
+    --color-text-primary: var(--hero-text-primary-light);
+    --color-text-muted: var(--hero-text-muted-light);
+  }
+}
+
+/* Hero section theme-aware background and text colors */
+.hero {
+  background-color: var(--hero-bg-dark);
+}
+
+.light .hero {
+  background-color: var(--hero-bg-light);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not(.dark) .hero {
+    background-color: var(--hero-bg-light);
+  }
+}
+
+/* Hero text colors - theme-aware */
+.heroTagline {
+  color: var(--hero-text-muted-dark);
+}
+
+.heroDescription {
+  color: var(--hero-text-primary-dark);
+}
+
+.light .heroTagline {
+  color: var(--hero-text-muted-light);
+}
+
+.light .heroDescription {
+  color: var(--hero-text-primary-light);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not(.dark) .heroTagline {
+    color: var(--hero-text-muted-light);
+  }
+  
+  :root:not(.dark) .heroDescription {
+    color: var(--hero-text-primary-light);
+  }
+}
+
+/* Hero responsive layout utilities */
+.heroInner {
+  container-type: inline-size;
+  container-name: hero-container;
+}
+
+.heroAnimation {
+  will-change: transform;
+}
+
+.heroAnimationVideo {
+  will-change: transform, width;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ensure video maintains aspect ratio across all viewports */
+@supports (aspect-ratio: 16/9) {
+  .heroAnimationVideo {
+    aspect-ratio: auto;
+  }
+}
+
+/* Smooth resize handling */
+@media (prefers-reduced-motion: no-preference) {
+  .heroInner {
+    transition: grid-template-columns 0.3s ease-out, gap 0.3s ease-out;
+  }
 }
 
 @layer base {

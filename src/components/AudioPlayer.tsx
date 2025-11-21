@@ -34,20 +34,20 @@ export function AudioPlayer({ tracks }: AudioPlayerProps) {
     return `${minutes}:${seconds.toString().padStart(2, '0')}`
   }
 
-  const handleLoadedMetadata = () => {
+  const handleLoadedMetadata = (): void => {
     if (audioRef.current) {
       setDuration(audioRef.current.duration)
       setIsLoaded(true)
     }
   }
 
-  const handleTimeUpdate = () => {
+  const handleTimeUpdate = (): void => {
     if (audioRef.current) {
       setCurrentTime(audioRef.current.currentTime)
     }
   }
 
-  const handleEnded = () => {
+  const handleEnded = (): void => {
     if (repeatMode === 'one') {
       handlePlay()
     } else if (repeatMode === 'all' || currentTrackIndex < tracks.length - 1) {
@@ -63,7 +63,11 @@ export function AudioPlayer({ tracks }: AudioPlayerProps) {
         await audioRef.current.play()
         setIsPlaying(true)
       } catch (error) {
-        console.error('Error playing audio:', error)
+        // Log audio playback errors in development
+        if (process.env.NODE_ENV === 'development') {
+          console.error('Error playing audio:', error)
+        }
+        // Silently fail in production to avoid console pollution
       }
     }
   }, [])
@@ -83,26 +87,26 @@ export function AudioPlayer({ tracks }: AudioPlayerProps) {
     }
   }, [isPlaying, handlePause, handlePlay])
 
-  const handleNext = () => {
+  const handleNext = (): void => {
     const nextIndex =
       currentTrackIndex < tracks.length - 1 ? currentTrackIndex + 1 : 0
     setCurrentTrackIndex(nextIndex)
   }
 
-  const handlePrevious = () => {
+  const handlePrevious = (): void => {
     const prevIndex =
       currentTrackIndex > 0 ? currentTrackIndex - 1 : tracks.length - 1
     setCurrentTrackIndex(prevIndex)
   }
 
-  const handleSeek = (value: number) => {
+  const handleSeek = (value: number): void => {
     if (audioRef.current) {
       audioRef.current.currentTime = value
       setCurrentTime(value)
     }
   }
 
-  const handleRepeatToggle = () => {
+  const handleRepeatToggle = (): void => {
     setRepeatMode((prev) => {
       if (prev === 'none') return 'all'
       if (prev === 'all') return 'one'
@@ -110,7 +114,7 @@ export function AudioPlayer({ tracks }: AudioPlayerProps) {
     })
   }
 
-  const handleTrackSelect = (index: number) => {
+  const handleTrackSelect = (index: number): void => {
     setCurrentTrackIndex(index)
   }
 

@@ -14,9 +14,15 @@ const contactSchema = z.object({
   website: z.string().optional(),
 })
 
-// In-memory rate limiting
-// WARNING: This is a simple in-memory store that will reset on server restart
-// For production, consider using Redis, database, or external rate limiting service
+/**
+ * In-memory rate limiting configuration
+ * 
+ * WARNING: This is a simple in-memory store that will reset on server restart.
+ * For production, consider using:
+ * - Redis (recommended for distributed systems)
+ * - Database-backed rate limiting
+ * - External services like Upstash Rate Limit or Vercel Edge Config
+ */
 type RateLimitData = {
   count: number
   resetTime: number
@@ -26,6 +32,10 @@ const rateLimitStore = new Map<string, RateLimitData>()
 const RATE_LIMIT_WINDOW = 10 * 60 * 1000 // 10 minutes in milliseconds
 const RATE_LIMIT_MAX_REQUESTS = 5
 
+/**
+ * Extract client IP address from request headers
+ * Checks multiple headers to support various hosting environments
+ */
 function getRateLimitKey(request: NextRequest): string {
   return (
     request.headers.get('x-forwarded-for') ||
@@ -35,6 +45,10 @@ function getRateLimitKey(request: NextRequest): string {
   )
 }
 
+/**
+ * Check if an IP address has exceeded the rate limit
+ * Implements a sliding window algorithm
+ */
 function isRateLimited(ip: string): boolean {
   const now = Date.now()
   const data = rateLimitStore.get(ip)
@@ -62,8 +76,10 @@ function isRateLimited(ip: string): boolean {
   return false
 }
 
-// Cleanup expired entries periodically
-// In production, consider using a proper cleanup mechanism
+/**
+ * Cleanup expired rate limit entries periodically
+ * Note: In production with multiple server instances, use a centralized solution
+ */
 setInterval(() => {
   const now = Date.now()
   for (const [ip, data] of rateLimitStore.entries()) {
@@ -98,16 +114,18 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: true })
     }
 
-    // Log the contact form submission (replace with email service later)
-    console.log('Contact form submission:', {
-      name: validatedData.name,
-      email: validatedData.email,
-      message: validatedData.message,
-      timestamp: new Date().toISOString(),
-      ip: clientIp,
-    })
+    // Log the contact form submission in development
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Contact form submission:', {
+        name: validatedData.name,
+        email: validatedData.email,
+        message: validatedData.message,
+        timestamp: new Date().toISOString(),
+        ip: clientIp,
+      })
+    }
 
-    // TODO: Send email notification
+    // TODO: Integrate email service (e.g., SendGrid, Resend, or Nodemailer)
     // await sendEmail({
     //   to: 'your-email@example.com',
     //   subject: `New contact from ${validatedData.name}`,
@@ -117,7 +135,10 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true })
   } catch (error) {
-    console.error('Contact form error:', error)
+    // Log errors in development for debugging
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Contact form error:', error)
+    }
 
     if (error instanceof z.ZodError) {
       return NextResponse.json(

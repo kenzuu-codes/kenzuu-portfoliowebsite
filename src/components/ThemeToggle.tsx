@@ -48,27 +48,19 @@ export function ThemeToggle() {
     setMounted(true)
   }, [])
 
-  if (!mounted) {
-    return (
-      <button
-        className="relative h-9 w-9 rounded-md border border-neutral-200 bg-white p-2 shadow-sm transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900"
-        aria-label="Toggle theme"
-      >
-        <div className="h-4 w-4" />
-      </button>
-    )
-  }
-
   const isDark = theme === 'dark'
 
   return (
     <motion.button
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
       variants={shouldReduceMotion ? undefined : buttonVariants}
       whileHover={shouldReduceMotion ? undefined : 'hover'}
       whileTap={shouldReduceMotion ? undefined : 'tap'}
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
       className="relative h-9 w-9 rounded-md border border-neutral-200 bg-white p-2 shadow-sm transition-colors hover:bg-neutral-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900"
-      aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
+      aria-label={`Switch to ${mounted ? `Switch to ${isDark ? 'light' : 'dark'} theme` : 'Toggle theme'}`}
     >
       <div className="relative h-4 w-4">
         <motion.svg
